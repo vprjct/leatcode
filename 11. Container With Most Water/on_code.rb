@@ -1,7 +1,6 @@
 # @param {Integer[]} height
 # @return {Integer}
 def max_area(height)
-    # 自分より大きい値で距離が遠いもの
     size = height.size
     max = 0
     l = 0
