@@ -1,0 +1,23 @@
+# @param {Integer} n
+# @param {Integer} k
+# @return {Integer[][]}
+def combine(n, k)
+    elements = []
+    for i in 0..n-1 do
+        elements.push i+1
+    end
+    return permutations(elements, [], 0, n-k+1)
+end
+
+def permutations(elements, subset, start, last)
+    result = []
+    for i in start..last-1
+        tmp = subset + [elements[i]]
+        if (last+1 <= elements.size)
+            result = result + permutations(elements, tmp, i+1, last+1)
+        else
+            result.push(tmp)
+        end
+    end
+    return result
+end
